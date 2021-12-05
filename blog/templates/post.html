@@ -1,0 +1,19 @@
+{% include 'head_post.html' %}
+{% include 'menu.html' %}
+{% load markdown_extras %}
+<div class="row">
+    <div class="twelve columns">
+        <h3>{{ post.title }}</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="twelve columns">
+        <img class="u-max-full-width" src="/media/{{ post.thumbnail }}">
+    </div>
+</div>
+<div class="row">
+    <div class="twelve columns">
+        {{ post.content | markdown | safe }}
+    </div>
+</div>
+{% include 'foot.html' %}

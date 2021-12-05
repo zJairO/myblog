@@ -1,0 +1,29 @@
+{% include 'head_index.html' %}
+{% include 'menu.html' %}
+    <div class="row">
+        <div class="col-12">
+            <h3>Hola</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <p>Este es un blog nada interesante sobre programación, ciencia y tecnología redactado por un ingeniero de
+            software que se deprime fácilmente y toma mucho café.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <h3>Recientes</h3>
+        </div>
+    </div>
+    <div class="row">
+        {% for post in object_list %}
+	<div class="twelve columns">{{ post.date|date:"d/m/y" }} <a href="{% url 'post' post.slug %}">{{ post.title }}</a></div>
+        {% endfor %}
+    </div>
+    <!-- <div class="row">
+        <div class="col-12 right">
+            coded with <3 </div>
+        </div>
+    </div> -->
+    {% include 'foot.html' %}
